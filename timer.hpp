@@ -22,5 +22,6 @@ private:
   std::chrono::time_point<std::chrono::system_clock> _start;
   std::ostream *_default_str;
 
+  static size_t _depth; //Counter of depth (number of timer objects should be depth of call ASUMING NO PARALLELISM)
   // static std::ostream *_default_str;
 };
