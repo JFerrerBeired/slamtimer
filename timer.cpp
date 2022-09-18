@@ -11,7 +11,7 @@ Timer::Timer(std::string name, std::ostream &stream)
 
 // Destruct and stop the timer, reporting the elapseed time
 Timer::~Timer() {
-  auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(clock_type::now() - _start);
-  *_default_str << std::string(_depth, '\t') << _name << " " << elapsed.count() << "\n";
+  auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(clock_type::now() - _start);
+  *_default_str << std::string(_depth, '\t') << _name << " " << elapsed.count()/1e6 << "\n";
   _depth--;
 }

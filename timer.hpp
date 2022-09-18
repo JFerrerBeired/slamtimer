@@ -4,7 +4,7 @@
 #include <ctime>
 #include <iostream>
 
-using clock_type = std::chrono::system_clock;
+using clock_type = std::chrono::high_resolution_clock;
 
 class Timer {
 
