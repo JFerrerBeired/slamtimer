@@ -10,7 +10,7 @@ class Timer {
 
 public:
   // Construct and start the timer
-  Timer(std::string name, std::ostream &stream = std::cout);
+  Timer(std::string name, bool local_map_idle = false, std::ostream &stream = std::cout);
 
   // Destruct and stop the timer, reporting the elapseed time
   ~Timer();
@@ -19,6 +19,7 @@ public:
 
 private:
   std::string _name;
+  bool _local_map_idle;
   std::chrono::time_point<std::chrono::system_clock> _start;
   std::ostream *_default_str;
 
